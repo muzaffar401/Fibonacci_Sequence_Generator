@@ -1,6 +1,6 @@
 # Fibonacci Sequence Generator - Project Documentation
 
-![Fibonacci Generator Screenshot](https://i.imgur.com/JQZ8X1l.png)
+![image](https://github.com/user-attachments/assets/e8a83446-4198-4f4a-b782-b85f936eb601)
 
 ## Table of Contents
 - [Project Overview](#project-overview)
@@ -39,7 +39,7 @@ F(n) = F(n-1) + F(n-2) for n > 1
 ```
 
 ### Fibonacci Spiral Diagram
-![Fibonacci Spiral](https://i.imgur.com/8LQqQ6e.png)
+![Fibonacci Spiral](https://media.geeksforgeeks.org/wp-content/uploads/20231013164044/Fibonacci-Spiral.jpg)
 
 The Fibonacci sequence appears frequently in nature, art, and architecture, often seen in patterns of plant growth, spiral galaxies, and more.
 
@@ -112,8 +112,8 @@ def benchmark(n):
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/fibonacci-generator.git
-   cd fibonacci-generator
+   git clone https://github.com/muzaffar401/Fibonacci-Sequence-Generator.git
+   cd Fibonacci-Sequence-Generator
    ```
 
 2. Create a virtual environment:
@@ -183,7 +183,7 @@ GET /api/fibonacci/<int:n>
 | Iterative   | 0.000012       |
 | Recursive   | 0.000045       |
 
-![Performance Chart](https://i.imgur.com/9XZ8Q1l.png)
+![Performance Chart](https://www.simplilearn.com/ice9/free_resources_article_thumb/Recursion_Call_Stack.png)
 
 ## Contributing
 
