@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fibonacci Generator</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container animate__animated animate__fadeIn">
+        <h1>Fibonacci Sequence Generator</h1>
+        
+        <form method="POST">
+            <div class="form-group">
+                <label for="fib_num">How many Fibonacci numbers would you like to generate?</label>
+                <input type="number" id="fib_num" name="fib_num" min="1" max="1000" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Generation Method:</label>
+                <div class="radio-group">
+                    <label class="radio-option">
+                        <input type="radio" id="iterative" name="method" value="iterative" checked>
+                        <span class="radio-custom"></span>
+                        <span>Iterative (Faster Performance)</span>
+                    </label>
+                    
+                    <label class="radio-option">
+                        <input type="radio" id="recursive" name="method" value="recursive">
+                        <span class="radio-custom"></span>
+                        <span>Recursive (Memoized)</span>
+                    </label>
+                </div>
+            </div>
+            
+            <button type="submit" class="animate__animated animate__pulse animate__infinite animate__slower">
+                Generate Sequence
+            </button>
+        </form>
+        
+        {% if sequence %}
+            <h2>Fibonacci Sequence <span class="method-tag">{{ method }} method</span></h2>
+            <div class="sequence">
+                {% for num in sequence %}
+                    <span class="animate__animated animate__fadeIn delay-{{ loop.index }}">{{ num }}</span>
+                {% endfor %}
+            </div>
+            
+            {% if benchmarks %}
+                <div class="benchmarks animate__animated animate__fadeIn">
+                    <h3>Performance Comparison</h3>
+                    <ul>
+                        <li>
+                            <strong>Recursive</strong>
+                            {{ benchmarks.recursive|round(6) }}s
+                        </li>
+                        <li>
+                            <strong>Iterative</strong>
+                            {{ benchmarks.iterative|round(6) }}s
+                        </li>
+                    </ul>
+                </div>
+            {% endif %}
+        {% endif %}
+    </div>
+</body>
+</html>
